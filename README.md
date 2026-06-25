@@ -5,3 +5,5 @@ datasets used:
 https://github.com/Apaulgithub/oibsip_taskno4/blob/main/spam.csv
 https://www.kaggle.com/datasets/jackksoncsie/spam-email-dataset
 
+file for combining data: 
+combine.py
