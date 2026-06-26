@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
+from sklearn.pipeline import make_pipeline
 
 data = pd.read_csv('combinned_data.csv')
 
@@ -31,15 +32,13 @@ vectorizer = CountVectorizer(
     max_features=5000 # use only top 5000 words
 )
 
-X_train_count = vectorizer.fit_transform(X_train)
-X_test_count = vectorizer.transform(X_test)
-
 # binary classifier
-model = LogisticRegression(max_iter=1000)
-model.fit(X_train_count, y_train)
+model = make_pipeline(vectorizer, 
+                      LogisticRegression(max_iter=1000))
+model.fit(X_train, y_train)
 
 # prediction
-y_pred = model.predict(X_test_count)
+y_pred = model.predict(X_test)
 
 # Accuracy
 print("Accuracy:", accuracy_score(y_test, y_pred))
