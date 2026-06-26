@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, classification_report
 from sklearn.pipeline import make_pipeline
 
 data = pd.read_csv('combinned_data.csv')
@@ -42,3 +42,7 @@ y_pred = model.predict(X_test)
 
 # Accuracy
 print("Accuracy:", accuracy_score(y_test, y_pred))
+
+# general report 
+print('report:')
+print(classification_report(y_test, y_pred))
