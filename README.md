@@ -24,7 +24,7 @@ CMPT 310 Group 1 | Email Classifier
 - **Windows (Git Bash):** `source venv/Scripts/activate`
 - **Mac/Linux:** `source venv/bin/activate`
 
-**3. Install the exact dependencies:**
+**3. Install the dependencies:**
 - `pip install -r requirements.txt`
 
 **4. Run Stage 1 classifier:**
