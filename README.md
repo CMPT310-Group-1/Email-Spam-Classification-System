@@ -8,9 +8,8 @@ CMPT 310 Group 1 | Email Classifier
 - Kevin Han (301610266) - kha166@sfu.ca
 
 ## Milestone 1: Binary Classifier (July 1)
-- Datasets used:
-
-`https://github.com/Apaulgithub/oibsip_taskno4/blob/main/spam.csv`
+- Datasets used:  
+`https://github.com/Apaulgithub/oibsip_taskno4/blob/main/spam.csv`  
 `https://www.kaggle.com/datasets/jackksoncsie/spam-email-dataset`
 - Combined dataset with `combine.py`.
 - Preprocessed raw dataset.
