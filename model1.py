@@ -1,7 +1,7 @@
 # train_binary.py
 
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import SGDClassifier
 from sklearn.metrics import accuracy_score, classification_report
@@ -44,6 +44,11 @@ model = make_pipeline(vectorizer,
                         random_state=44
                       )
 )
+
+# does a cross validation
+cv_score = cross_val_score(model, X_train, y_train, cv=10)
+
+print(cv_score.mean())
                     
 model.fit(X_train, y_train)
 
