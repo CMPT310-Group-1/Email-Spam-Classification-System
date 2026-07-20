@@ -16,6 +16,9 @@ CMPT 310 Group 1 | Email Classifier
 - Deployed Stochastic Gradient Descent using a Logistic Loss function and L2 Regularization.
 - Exported the model as `stage1.pkl` for future milestone.
 
+For part 2 we are using the following dataset:
+https://www.kaggle.com/datasets/fenilsonani/email-data-for-email-classification/data
+
 ## Setup
 **1. Create a virtual environment:**
 - `python -m venv venv`
