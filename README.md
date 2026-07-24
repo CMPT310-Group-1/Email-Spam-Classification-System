@@ -32,3 +32,8 @@ https://www.kaggle.com/datasets/fenilsonani/email-data-for-email-classification/
 
 **4. Run Stage 1 classifier:**
 - `python model1.py`
+
+## Result
+![App Screenshot](model1_confusion_matrix.png)
+
+![App Screenshot](model2_confusion_matrix.png)
