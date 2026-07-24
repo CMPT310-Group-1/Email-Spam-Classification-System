@@ -7,6 +7,7 @@ from sklearn.linear_model import SGDClassifier
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.pipeline import make_pipeline
 import joblib
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
 # load dataset
 data = pd.read_csv('cleaning_data.csv')
@@ -58,6 +59,11 @@ model.fit(X_train, y_train)
 
 # prediction
 y_pred = model.predict(X_test)
+
+# confusion matrix for display
+cm = confusion_matrix(y_true=y_test, y_pred=y_pred)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+disp.plot().figure_.savefig('model2_confusion_matrix.png')
 
 # accuracy
 print("Accuracy:", accuracy_score(y_test, y_pred))

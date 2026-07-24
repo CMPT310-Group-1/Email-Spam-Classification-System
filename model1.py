@@ -6,6 +6,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import SGDClassifier
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.pipeline import make_pipeline
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
 # to save the model for stage 2
 import joblib
@@ -54,6 +55,11 @@ model.fit(X_train, y_train)
 
 # prediction
 y_pred = model.predict(X_test)
+
+# confusion matrix for display
+cm = confusion_matrix(y_true=y_test, y_pred=y_pred)
+disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+disp.plot().figure_.savefig('model1_confusion_matrix.png')
 
 # Accuracy / Zero-one loss
 print("Accuracy:", accuracy_score(y_test, y_pred))
