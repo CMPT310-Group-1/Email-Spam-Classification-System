@@ -13,10 +13,20 @@ import joblib
 
 data = pd.read_csv('combinned_data.csv')
 
+# added stage 2 data back into stage 1
+stage2_data = pd.read_csv('cleaning_data.csv')
+stage2_data = stage2_data.dropna(subset=['mod_text', 'spam'])
+stage2_data = stage2_data[['mod_text', 'spam']]
+
+stage2_data['mod_text'] = stage2_data['mod_text'].astype(str)
+stage2_data['spam'] = stage2_data['spam'].astype(int)
+
 # clean
 data = data.dropna(subset=['mod_text', 'spam'])
 data['mod_text'] = data['mod_text'].astype(str)
 data['spam'] = data['spam'].astype(int)
+
+data = pd.concat([data, stage2_data])
 
 X = data['mod_text']
 y = data['spam']
