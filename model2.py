@@ -73,4 +73,4 @@ print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
 
 # save model
-#joblib.dump(model, 'stage2.pkl')
+joblib.dump(model, 'stage2.pkl')
