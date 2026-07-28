@@ -47,6 +47,14 @@ https://www.kaggle.com/datasets/fenilsonani/email-data-for-email-classification/
 
 ## Result
 
-![App Screenshot](model1_confusion_matrix.png)
+![Model 1 Confusion Matrix](results/model1_confusion_matrix.png)
 
-![App Screenshot](model2_confusion_matrix.png)
+![Model 2 Confusion Matrix](results/model2_confusion_matrix.png)
+
+![App: Single mail send 1](results/single_mail_send1.png)
+
+![App: Single mail send 2](results/single_mail_send2.png)
+
+![App: Multiple mails send 1](results/multiple_mail_send1.png)
+
+![App: Multiple mails send 2](results/multiple_mail_send2.png)
