@@ -43,7 +43,7 @@ with col1:
 with col2:
     with st.popover("Send"):
         st.subheader("Send an Email to us:")
-        with st.form(key='single_form'):
+        with st.form(key='single_form', clear_on_submit=True):
             subject = st.text_input("Subject:")
             text = st.text_area("Content:")
             submit_button = st.form_submit_button("Send")
@@ -66,12 +66,13 @@ with col2:
                         new_email["classification"] = f"Spam - {class_prediction}"
                         
                         st.session_state.spam.append(new_email)
-                        st.error(f"Classified as Spam: {class_prediction}")
+                        st.session_state.upload_error = f"Classified as Spam: {class_prediction}"
                     else:
                         # if ham:
                         new_email["classification"] = "Legit"
                         st.session_state.inbox.append(new_email)
-                        st.success("Email sent to Inbox!")
+                        st.session_state.upload_success = "Email sent to Inbox!"
+                    st.rerun()
                 else:
                     st.warning("Please enter both a subject and text.")
 
@@ -123,6 +124,10 @@ st.divider()
 if 'upload_success' in st.session_state:
     st.success(st.session_state.upload_success)
     del st.session_state.upload_success
+
+if 'upload_error' in st.session_state:
+    st.error(st.session_state.upload_error)
+    del st.session_state.upload_error
 
 # Text area
 if st.session_state.current_tab == "Inbox":
