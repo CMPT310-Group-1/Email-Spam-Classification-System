@@ -9,3 +9,4 @@ six==1.17.0
 threadpoolctl==3.6.0
 tzdata==2026.2
 Streamlit==1.60.0
+matplotlib==3.11.1
