@@ -27,12 +27,13 @@ https://www.kaggle.com/datasets/fenilsonani/email-data-for-email-classification/
 - Exported the model as `stage2.pkl` for future use.
 - Constructed confusion matrix for both spam prediction model and spam categorization model.
 - Developed an interactive web application using Streamlit - utilizing `stage1.pkl` and `stage2.pkl` models - to interact with the system through a graphical interface instead of Python scripts.
+
 This site allows users to:
-+ Send individual emails by entering a subject and message.
-+ Upload a CSV file containing multiple emails for batch classification.
-+ Automatically classify each email using our trained models.
-+ Route legitimate emails to the Inbox and spam emails to the Spam mailbox.
-+ Display spam subcategories predicted by the second-stage classifier.
+1. Send individual emails by entering a subject and message.
+2. Upload a CSV file containing multiple emails for batch classification.
+3. Automatically classify each email using our trained models.
+4. Route legitimate emails to the Inbox and spam emails to the Spam mailbox.
+5. Display spam subcategories predicted by the second-stage classifier.
 
 ## Setup
 
