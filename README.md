@@ -21,6 +21,19 @@ CMPT 310 Group 1 | Email Classifier
 For part 2 we are using the following dataset:
 https://www.kaggle.com/datasets/fenilsonani/email-data-for-email-classification/data
 
+## Milestone 2: Multi-class Classifier (July 29)
+
+- Successfully classified spam emails into various categories, namely bank_phishing, financial_fraud, government_impersonation and romance_parcel_sextortion.
+- Exported the model as `stage2.pkl` for future use.
+- Constructed confusion matrix for both spam prediction model and spam categorization model.
+- Developed an interactive web application using Streamlit - utilizing `stage1.pkl` and `stage2.pkl` models - to interact with the system through a graphical interface instead of Python scripts.
+This site allows users to:
++ Send individual emails by entering a subject and message.
++ Upload a CSV file containing multiple emails for batch classification.
++ Automatically classify each email using our trained models.
++ Route legitimate emails to the Inbox and spam emails to the Spam mailbox.
++ Display spam subcategories predicted by the second-stage classifier.
+
 ## Setup
 
 **1. Create a virtual environment:**
