@@ -35,6 +35,8 @@ This site allows users to:
 4. Route legitimate emails to the Inbox and spam emails to the Spam mailbox.
 5. Display spam subcategories predicted by the second-stage classifier.
 
+dataset: https://huggingface.co/datasets/Shade63/scam-classification-multiclass/blob/main/sentinel_dataset_multiclass.csv 
+
 ## Setup
 
 **1. Create a virtual environment:**
