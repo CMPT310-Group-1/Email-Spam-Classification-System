@@ -63,7 +63,7 @@ y_pred = model.predict(X_test)
 # confusion matrix for display
 cm = confusion_matrix(y_true=y_test, y_pred=y_pred)
 disp = ConfusionMatrixDisplay(confusion_matrix=cm)
-disp.plot().figure_.savefig('model2_confusion_matrix.png')
+disp.plot().figure_.savefig('results/model2_confusion_matrix.png')
 
 # accuracy
 print("Accuracy:", accuracy_score(y_test, y_pred))
