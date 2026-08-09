@@ -1,6 +1,6 @@
 import pandas as pd
 import joblib
-from sklearn.metrics import RocCurveDisplay
+from sklearn.metrics import RocCurveDisplay, PrecisionRecallDisplay
 import matplotlib.pyplot as plt
 # python visualization.py
 
@@ -46,7 +46,4 @@ print(model2_incorrect)
 # additional image visualization
 
 RocCurveDisplay.from_estimator(stage1, stage1_data['mod_text'], stage1_data['spam'])
-plt.show()
-
-RocCurveDisplay.from_estimator(stage2, stage2_data['mod_text'], stage2_data['category'])
 plt.show()
