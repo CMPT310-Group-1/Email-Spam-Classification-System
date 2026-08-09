@@ -31,8 +31,8 @@ with st.sidebar:
     inbox_type = "primary" if st.session_state.current_tab == "Inbox" else "secondary"
     spam_type = "primary" if st.session_state.current_tab == "Spam" else "secondary"
 
-    st.button("Inbox", use_container_width=True, type=inbox_type, on_click=switch_tab, args=("Inbox",))
-    st.button("Spam", use_container_width=True, type=spam_type, on_click=switch_tab, args=("Spam",))
+    st.button(f"Inbox ({len(st.session_state.inbox)})", use_container_width=True, type=inbox_type, on_click=switch_tab, args=("Inbox",))
+    st.button(f"Spam ({len(st.session_state.spam)})", use_container_width=True, type=spam_type, on_click=switch_tab, args=("Spam",))
 
 # Header and button(s)
 col1, col2, col3 = st.columns([4, 1, 1])
@@ -136,8 +136,7 @@ if st.session_state.current_tab == "Inbox":
         st.write("Empty.")
     else:
         for i, email in enumerate(reversed(st.session_state.inbox)):
-            with st.expander(f"Subject: {email['subject']}"):
-                st.write(f"**Classification:** {email['classification']}")
+            with st.expander(f"{email['subject']} | {email['classification']}"):
                 st.write(f"**Message:** {email['text']}")
 
 elif st.session_state.current_tab == "Spam":
@@ -146,6 +145,5 @@ elif st.session_state.current_tab == "Spam":
         st.write("Empty.")
     else:
         for i, email in enumerate(reversed(st.session_state.spam)):
-            with st.expander(f"Subject: {email['subject']}"):
-                st.write(f"**Classification:** {email['classification']}")
+            with st.expander(f"{email['subject']} | {email['classification']}"):
                 st.write(f"**Message:** {email['text']}")
