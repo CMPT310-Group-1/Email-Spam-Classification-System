@@ -66,12 +66,12 @@ with col2:
                         new_email["classification"] = f"Spam - {class_prediction}"
                         
                         st.session_state.spam.append(new_email)
-                        st.session_state.upload_error = f"Classified as Spam: {class_prediction}"
+                        st.session_state.upload_error = f"Spam detected — Category: {class_prediction}"
                     else:
                         # if ham:
                         new_email["classification"] = "Legit"
                         st.session_state.inbox.append(new_email)
-                        st.session_state.upload_success = "Email sent to Inbox!"
+                        st.session_state.upload_success = "Legitimate email — Sent to Inbox"
                     st.rerun()
                 else:
                     st.warning("Please enter both a subject and text.")
